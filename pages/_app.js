@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image';
 import { useEffect } from 'react'
 import { useRouter } from 'next/dist/client/router';
@@ -49,6 +50,21 @@ export default function MyApp({ Component, pageProps }) {
           </header>
           
           <Component {...pageProps} />
+
+          <footer className='container-fluid py-1 small'>
+            <div className='row justify-content-between align-items-center'>
+              <div className='col-4'>
+              </div>
+
+              <div className='col-4 text-center'>
+                <a href='https://marcelomesquita.com/' className='text-decoration-none'>marcelo mesquita</a>
+              </div>
+
+              <div className='col-4 text-end'>
+                <Link href='/scroll'><a className='text-decoration-none text-dark'>manuscritos</a></Link>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </>

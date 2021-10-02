@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import cryptoRandomString from 'crypto-random-string';
 
@@ -34,8 +33,6 @@ export default function Home() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [bullshit, setBullshit] = useState('');
-
-  const autoFocus = useCallback(e => e ? e.focus() : null, []);
 
   useEffect(() => {
     setAnswer(features[getRandomInteger(0, features.length)]);
@@ -123,7 +120,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='container py-3 mt-auto'>
+      <div className='container py-5 mt-auto'>
         <div className='row justify-content-center'>
           <div className='col-12 col-md-8'>
             <input 
@@ -137,11 +134,6 @@ export default function Home() {
               onKeyPress={e => handleKeyPress(e)}
               onChange={e => handleChange(e)}
             />
-            <div className="form-text">
-              <Link href='/scroll'>
-                <a className='text-dark text-decoration-none' title='manuscrito'>manuscrito</a>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
