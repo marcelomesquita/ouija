@@ -1,0 +1,47 @@
+$primary: #666666;
+$secondary: #170B3B;
+$success: #009B00;
+$info: #0073C4;
+$warning: #F28500;
+$danger: #6e0b10;
+$light: #F1F0F0;
+$dark: #252424;
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Eater&family=Philosopher:wght@400;700&family=Rock+Salt&display=swap');
+
+body {
+  font-size: 1.2em;
+  font-family: 'Philosopher', cursive;
+  background-color: $dark;
+  min-height: 100vh;
+}
+
+#answer {
+  transition: opacity 3s;
+}
+
+.cover {
+  min-height: 100vh;
+}
+
+.rotate-135 {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: 
+      url('/assets/images/background/tl.png'), 
+      url('/assets/images/background/tr.png'),
+      url('/assets/images/background/bl.png'),
+      url('/assets/images/background/br.png')
+    ;
+    background-position: left top, right top, bottom left, bottom right;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  }
+}
