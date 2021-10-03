@@ -33,15 +33,32 @@ body {
   transform: rotate(135deg);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 576px) {
+  body {
+    background-image: url('/assets/images/background/tc.png');
+    background-size: 360px 270px;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media only screen and (min-width: 576px) {
   body {
     background-image: 
+      url('/assets/images/background/tc.png'), 
       url('/assets/images/background/tl.png'), 
       url('/assets/images/background/tr.png'),
       url('/assets/images/background/bl.png'),
       url('/assets/images/background/br.png')
     ;
-    background-position: left top, right top, bottom left, bottom right;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 360px 270px, 350px 500px, 350px 500px, 400px 150px, 400px 150px;
+    background-position: center top, left top, right top, bottom left, bottom right;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
 }

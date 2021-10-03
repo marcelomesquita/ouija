@@ -1,11 +1,7 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image';
 import { useEffect } from 'react'
 import { useRouter } from 'next/dist/client/router';
 import { analytics } from '/adapters/firebaseClient';
-
-import goat from '/assets/images/goat.png';
 
 import '/assets/styles/globals.scss'
 
@@ -37,36 +33,13 @@ export default function MyApp({ Component, pageProps }) {
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
         <meta name='author' content='Marcelo Mesquita' />
-        <meta name="description" content="O site oujia moderniza a forma de se comunicar com espíritos." />
+        <meta name='description' content='O site oujia moderniza a forma de se comunicar com espíritos.' />
 
         <title>Ouija</title>
         <link rel='icon' type='image/x-icon' href='favicon.ico' />
       </Head>
 
-      <div className='cover'>
-        <div className='cover d-flex flex-column text-light'>
-          <header className='container text-center'>
-            <Image src={goat} width={360} height={270} alt='OUIJA' />
-          </header>
-          
-          <Component {...pageProps} />
-
-          <footer className='container-fluid py-1 small'>
-            <div className='row justify-content-between align-items-center'>
-              <div className='col-4'>
-              </div>
-
-              <div className='col-4 text-center'>
-                <a href='https://marcelomesquita.com/' className='text-decoration-none'>marcelo mesquita</a>
-              </div>
-
-              <div className='col-4 text-end'>
-                <Link href='/scroll'><a className='text-decoration-none text-dark'>manuscritos</a></Link>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </div>
+      <Component {...pageProps} />
     </>
   )
 }

@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cryptoRandomString from 'crypto-random-string';
+import Container from "components/layout/Container";
 
 export default function Home() {
   const features = [
-    'Esse é um tabuleiro de ouija digital, ele gera caracteres aleatórios. Acredita-se que entidades tenham capacidade de interferir no plano físico, conseguindo assim influenciar os caracteres que serão apresentados formando uma frase compreensível.',
-    'Use por sua conta e risco',
+    'Esse é um tabuleiro de ouija digital, ele gera caracteres aleatórios.',
+    'Acredita-se que entidades tenham capacidade de interferir no plano físico, conseguindo influenciar os caracteres.',
+    'Use por sua conta e risco!',
     'Gostaria de saber sobre seu futuro?',
     'Que tal conhecer um pouco sobre o outro lado?',
     'As respostas nem sempre são tão claras quanto gostaríamos.',
@@ -110,19 +112,19 @@ export default function Home() {
   }
 
   return (
-    <>
-      <div className='container py-5 text-center'>
-        <div className='row justify-content-center'>
-          <div className='col-12 col-md-8'>
+    <Container>
+      <div className='container-fluid mt-auto'>
+        <div className='row justify-content-center text-center'>
+          <div className='col-sm-8'>
             <p id='question' className='h1 text-primary'>{question}</p>
             <p id='answer' className={`h2 ${loading ? 'opacity-0' : 'opacity-100'}`}>{answer}</p>
           </div>
         </div>
       </div>
 
-      <div className='container py-5 mt-auto'>
+      <div className='container-fluid mt-auto'>
         <div className='row justify-content-center'>
-          <div className='col-12 col-md-8'>
+          <div className='col-sm-8'>
             <input 
               type='text' 
               className='form-control form-control-lg bg-dark text-light border-light' 
@@ -137,6 +139,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </Container>
   )
 }
