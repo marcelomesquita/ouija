@@ -1,0 +1,13 @@
+.planchette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  -webkit-transform: rotate(333deg);
+  -moz-transform: rotate(333deg);
+  -ms-transform: rotate(333deg);
+  -o-transform: rotate(333deg);
+  transform: rotate(333deg);
+  opacity: 0.5;
+}

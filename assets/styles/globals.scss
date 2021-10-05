@@ -7,14 +7,22 @@ $danger: #6e0b10;
 $light: #F1F0F0;
 $dark: #252424;
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '/node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Eater&family=Philosopher:wght@400;700&family=Rock+Salt&display=swap');
+
+* {
+  cursor: none;
+}
 
 body {
   font-size: 1.2em;
   font-family: 'Philosopher', cursive;
-  background-color: $dark;
   min-height: 100vh;
+  background-color: $dark;
+  background-image: url('/assets/images/background/tc.png');
+  background-size: 360px 270px;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 #answer {
@@ -25,24 +33,13 @@ body {
   min-height: 100vh;
 }
 
-.rotate-135 {
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-
 @media only screen and (max-width: 576px) {
-  body {
-    background-image: url('/assets/images/background/tc.png');
-    background-size: 360px 270px;
-    background-position: center top;
-    background-repeat: no-repeat;
-  }
 }
 
 @media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
   body {
     background-image: 
       url('/assets/images/background/tc.png'), 
@@ -55,9 +52,6 @@ body {
     background-position: center top, left top, right top, bottom left, bottom right;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   }
-}
-
-@media only screen and (min-width: 768px) {
 }
 
 @media only screen and (min-width: 992px) {
