@@ -39,8 +39,8 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='description' content='Versão moderna da táboa de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
         <meta name='keywords' content='ouija' />
 
-        <meta itemprop='name' content='Ouija' />
-        <meta itemprop='description' content='Versão moderna da táboa de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
+        <meta itemProp='name' content='Ouija' />
+        <meta itemProp='description' content='Versão moderna da táboa de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@ouijacombr' />
