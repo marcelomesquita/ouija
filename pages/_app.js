@@ -5,6 +5,7 @@ import { analytics } from '/adapters/firebaseClient';
 
 import '/assets/styles/globals.scss'
 import Cursor from 'components/layout/Cursor';
+import RandomnessProvider from 'contexts/Randomness';
 
 export default function MyApp({ Component, pageProps }) {
   const routers = useRouter();
@@ -29,7 +30,7 @@ export default function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
+    <RandomnessProvider>
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
@@ -60,6 +61,6 @@ export default function MyApp({ Component, pageProps }) {
       <Cursor />
 
       <Component {...pageProps} />
-    </>
+    </RandomnessProvider>
   )
 }

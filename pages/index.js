@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import cryptoRandomString from 'crypto-random-string';
-import Container from "components/layout/Container";
+import Container from '/components/layout/Container';
+import { getRandomInteger, getRandomString } from '/helpers/random';
 
 export default function Home() {
   const features = [
@@ -45,14 +45,6 @@ export default function Home() {
   useEffect(() => {
     setBullshit(bullshits[getRandomInteger(0, bullshits.length)]);
   }, [answer])
-
-  function getRandomInteger(min = 0, max = 100) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function getRandomString(size = getRandomInteger(0, 10)) {
-    return cryptoRandomString({length: size, type: 'ascii-printable'});
-  }
 
   function invoke() {
     if (ocult) {
