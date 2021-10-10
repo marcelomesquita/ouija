@@ -108,6 +108,7 @@ export default function Home() {
       <div className='container-fluid mt-auto'>
         <div className='row justify-content-center text-center'>
           <div className='col-sm-8'>
+            <h1 className='visually-hidden'>OUIJA</h1>
             <p id='question' className='h1 text-primary'>{question}</p>
             <p id='answer' className={`h2 ${loading ? 'opacity-0' : 'opacity-100'}`}>{answer}</p>
           </div>

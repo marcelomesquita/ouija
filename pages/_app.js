@@ -37,22 +37,22 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='author' content='Marcelo Mesquita' />
 
         <meta name='application-name' content='Ouija' />
-        <meta name='description' content='Versão moderna da táboa de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
-        <meta name='keywords' content='ouija' />
+        <meta name='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta name='keywords' content='ouija lucifer' />
 
         <meta itemProp='name' content='Ouija' />
-        <meta itemProp='description' content='Versão moderna da táboa de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
+        <meta itemProp='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@ouijacombr' />
         <meta name='twitter:title' content='Ouija' />
-        <meta name='twitter:description' content='Versão moderna da táboa jogo de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
+        <meta name='twitter:description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
         <meta name='twitter:creator' content='@ouijacombr' />
 
         <meta property='og:title' content='Ouija' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://www.ouija.com.br' />
-        <meta property='og:description' content='Versão moderna da táboa jogo de ouija. Apenas escreva sua pergunta e aguarde a resposta.' />
+        <meta property='og:description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
 
         <title>Ouija</title>
         <link rel='icon' type='image/x-icon' href='favicon.png' />

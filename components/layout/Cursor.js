@@ -10,7 +10,7 @@ export default function Cursor() {
   const { x, y } = useMousePosition();
 
   function getX() {
-    if (randomness.active == 'shake') {
+    if (randomness.active?.name == 'shake') {
       return x + getRandomInteger(1, 10);
     }
 
@@ -18,7 +18,7 @@ export default function Cursor() {
   }
 
   function getY() {
-    if (randomness.active == 'shake') {
+    if (randomness.active?.name == 'shake') {
       return y + getRandomInteger(1, 10);
     }
 
