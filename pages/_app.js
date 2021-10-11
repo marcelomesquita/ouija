@@ -55,7 +55,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta property='og:description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
 
         <title>Ouija</title>
-        <link rel='icon' type='image/x-icon' href='favicon.png' />
+        <link rel='shortcut icon apple-touch-icon apple-touch-startup-image' href='favicon.png' />
       </Head>
 
       <Cursor />

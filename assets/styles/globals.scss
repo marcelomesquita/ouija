@@ -11,7 +11,7 @@ $dark: #252424;
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Eater&family=Philosopher:wght@400;700&family=Rock+Salt&display=swap');
 
 * {
-  cursor: none;
+  cursor: none !important;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
 
 #answer {
   transition: opacity 3s;
+  word-wrap: break-word;
 }
 
 .cover {

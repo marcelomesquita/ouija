@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { FaDiceD20 } from 'react-icons/fa';
 import Container from '/components/layout/Container';
 import { getRandomInteger, getRandomString } from '/helpers/random';
 
@@ -24,7 +25,8 @@ export default function Home() {
     'Fantasmas incomunicaveis, se me responderem eu prometo que ascendo uma vela para vocês ',
     'Que as almas perdidas utilizem esse caminho aberto para a comunicação entre nós presentes aqui ',
     'Os que aqui se encontram tente controlar as letras geradas aleatoriamente para falar conosco ',
-    'Estamos aqui presentes a espera de um contato imediato com qualquer tipo de indivíduo '
+    'Estamos aqui presentes a espera de um contato imediato com qualquer tipo de indivíduo ',
+    'Bode sagrado me faça um agrado respondendo a pergunta que te faço ',
   ];
 
   const entryInput = useRef(null);
@@ -61,20 +63,11 @@ export default function Home() {
   function datilography(key) {
     if (key == '/' && entry == '') {
       setPsychographing(true);
-    } else if (key == 'Enter') {
-      setQuestion(entry);
-      setAnswer('');
-      setEntry('');
-      setLoading(true);
-
-      setTimeout(invoke, (getRandomInteger(3, 9) * 1000));
     }
   }
 
   function psycografy(key) {
-    if (key == 'Enter') {
-      setPsychographing(false);
-    } else {
+    if (key != 'Enter') {
       setOcult(value => value + key);
       setEntry(bullshit.substring(0, ocult.length + 1));
     }
@@ -103,6 +96,21 @@ export default function Home() {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (psychographing) {
+      setPsychographing(false);
+    } else {
+      setQuestion(entry);
+      setAnswer('');
+      setEntry('');
+      setLoading(true);
+
+      setTimeout(invoke, (getRandomInteger(3, 9) * 1000));
+    }
+  }
+
   return (
     <Container>
       <div className='container-fluid mt-auto'>
@@ -118,17 +126,22 @@ export default function Home() {
       <div className='container-fluid mt-auto'>
         <div className='row justify-content-center'>
           <div className='col-sm-8'>
-            <input 
-              type='text' 
-              className='form-control form-control-lg bg-dark text-light border-light' 
-              placeholder='Qual a sua pergunta?' 
-              disabled={loading}
-              value={entry} 
-              ref={entryInput}
-              onKeyDown={e => handleKeyDown(e)}
-              onKeyPress={e => handleKeyPress(e)}
-              onChange={e => handleChange(e)}
-            />
+            <form onSubmit={e => handleSubmit(e)}>
+              <div className='input-group input-group-lg'>
+                <input 
+                  type='text' 
+                  className='form-control bg-dark text-light border-light' 
+                  placeholder='Qual a sua pergunta?' 
+                  disabled={loading}
+                  value={entry} 
+                  ref={entryInput}
+                  onKeyDown={e => handleKeyDown(e)}
+                  onKeyPress={e => handleKeyPress(e)}
+                  onChange={e => handleChange(e)}
+                />
+                <button className='btn btn-outline-light' type='submit'><FaDiceD20 size={20} /></button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
