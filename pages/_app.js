@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }) {
 
         <meta name='application-name' content='Ouija' />
         <meta name='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
-        <meta name='keywords' content='ouija lucifer' />
+        <meta name='keywords' content='ouija, táboa de ouija, tabuleiro de ouija, jogo dos espíritos, lúcifer' />
 
         <meta itemProp='name' content='Ouija' />
         <meta itemProp='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
