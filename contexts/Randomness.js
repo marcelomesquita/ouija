@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { Howl } from 'howler';
 import { getRandomInteger } from '/helpers/random';
 
 const RandomnessContext = createContext();
@@ -19,6 +20,13 @@ export default function RandomnessProvider(props) {
 	];
 	const gap = 5 * 1000;
 	const probability = 100;
+	const sounds = {
+		'drum': new Howl({ src: ['/assets/audios/drum.mp3'], preload: true }),
+		'radar': new Howl({ src: ['/assets/audios/radar.mp3'], preload: true }),
+		'talk': new Howl({ src: ['/assets/audios/talk.mp3'], preload: true }),
+		'whisper': new Howl({ src: ['/assets/audios/whisper.mp3'], preload: true }),
+		'whoosh': new Howl({ src: ['/assets/audios/whoosh.mp3'], preload: true })
+	};
 
 	useEffect(() => {
     const interval = setInterval(randomness, gap);
@@ -42,23 +50,23 @@ export default function RandomnessProvider(props) {
 	}
 
 	function drum() {
-		new Audio('/assets/audios/drum.mp3').play();
+		sounds.drum.play();
 	}
 
 	function radar() {
-		new Audio('/assets/audios/radar.mp3').play();
+		sounds.radar.play();
 	}
 
 	function talk() {
-		new Audio('/assets/audios/talk.mp3').play();
+		sounds.talk.play();
 	}
 
 	function whisper() {
-		new Audio('/assets/audios/whisper.mp3').play();
+		sounds.whisper.play();
 	}
 
 	function whoosh() {
-		new Audio('/assets/audios/whoosh.mp3').play();
+		sounds.whoosh.play();
 	}
 
 	return <RandomnessContext.Provider value={{ active }}>{props.children}</RandomnessContext.Provider>;

@@ -29,7 +29,9 @@ export default function Home() {
     'Estamos aqui presentes a espera de um contato imediato com qualquer tipo de indivíduo ',
     'Bode sagrado me faça um agrado respondendo a pergunta que te faço ',
   ];
-  const radar = new Howl({ src: ['/assets/audios/radar.mp3'], preload: true });
+  const sounds = {
+    'radar': new Howl({ src: ['/assets/audios/radar.mp3'], preload: true })
+  };
 
   const entryInput = useRef(null);
   const [psychographing, setPsychographing] = useState(false);
@@ -60,7 +62,7 @@ export default function Home() {
     setOcult('');
     setLoading(false);
     
-    radar.play();
+    sounds.radar.play();
     entryInput.current.focus();
   }
   
