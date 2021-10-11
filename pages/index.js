@@ -5,7 +5,7 @@ import { getRandomInteger, getRandomString } from '/helpers/random';
 
 export default function Home() {
   const features = [
-    'Esse é um tabuleiro de ouija digital, ele gera caracteres aleatórios.',
+    'Esse é um tabuleiro de ouija digital, ele gera caracteres aleatórios que, às vezes, fazem sentido.',
     'Acredita-se que entidades tenham capacidade de interferir no plano físico, conseguindo influenciar os caracteres.',
     'Use por sua conta e risco!',
     'Gostaria de saber sobre seu futuro?',
@@ -58,6 +58,7 @@ export default function Home() {
     setOcult('');
     setLoading(false);
     entryInput.current.focus();
+    new Audio('/assets/audios/radar.mp3').play();
   }
   
   function datilography(key) {

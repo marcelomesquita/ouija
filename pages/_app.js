@@ -37,25 +37,27 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='author' content='Marcelo Mesquita' />
 
         <meta name='application-name' content='Ouija' />
-        <meta name='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta name='description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
         <meta name='keywords' content='ouija, táboa de ouija, tabuleiro de ouija, jogo dos espíritos, lúcifer' />
 
         <meta itemProp='name' content='Ouija' />
-        <meta itemProp='description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta itemProp='description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@ouijacombr' />
         <meta name='twitter:title' content='Ouija' />
-        <meta name='twitter:description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta name='twitter:description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
         <meta name='twitter:creator' content='@ouijacombr' />
 
         <meta property='og:title' content='Ouija' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://www.ouija.com.br' />
-        <meta property='og:description' content='Versão moderna da infame táboa de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta property='og:description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
 
         <title>Ouija</title>
-        <link rel='shortcut icon apple-touch-icon apple-touch-startup-image' href='favicon.png' />
+        <link rel='shortcut icon' href='favicon.png' />
+        <link rel='apple-touch-icon' href='favicon.png' />
+        <link rel='apple-touch-startup-image' href='favicon.png' />
       </Head>
 
       <Cursor />
