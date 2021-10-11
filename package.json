@@ -12,6 +12,7 @@
     "bootstrap": "^5.1.0",
     "crypto-random-string": "^4.0.0",
     "firebase": "^8.7.0",
+    "howler": "^2.2.3",
     "i": "^0.3.7",
     "next": "11.1.2",
     "npm": "^7.24.1",

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FaDiceD20 } from 'react-icons/fa';
+import { Howl } from 'howler';
 import Container from '/components/layout/Container';
 import { getRandomInteger, getRandomString } from '/helpers/random';
 
@@ -28,6 +29,7 @@ export default function Home() {
     'Estamos aqui presentes a espera de um contato imediato com qualquer tipo de indivíduo ',
     'Bode sagrado me faça um agrado respondendo a pergunta que te faço ',
   ];
+  const radar = new Howl({ src: ['/assets/audios/radar.mp3'], preload: true });
 
   const entryInput = useRef(null);
   const [psychographing, setPsychographing] = useState(false);
@@ -57,8 +59,9 @@ export default function Home() {
 
     setOcult('');
     setLoading(false);
+    
+    radar.play();
     entryInput.current.focus();
-    new Audio('/assets/audios/radar.mp3').play();
   }
   
   function datilography(key) {
