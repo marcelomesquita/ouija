@@ -39,7 +39,7 @@ export default function Home() {
   const [psychographing, setPsychographing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [entry, setEntry] = useState('');
-  const [ocult, setOcult] = useState('');
+  const [occult, setOccult] = useState('');
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [bullshit, setBullshit] = useState('');
@@ -55,13 +55,13 @@ export default function Home() {
   }, [answer])
 
   function invoke() {
-    if (ocult) {
-      setAnswer(getRandomString() + ocult + getRandomString());
+    if (occult) {
+      setAnswer(getRandomString() + occult + getRandomString());
     } else {
       setAnswer(getRandomString(getRandomInteger(10, 100)));
     }
 
-    setOcult('');
+    setOccult('');
     setLoading(false);
     
     sounds.radar.play();
@@ -76,16 +76,16 @@ export default function Home() {
 
   function psycografy(key) {
     if (key != 'Enter') {
-      setOcult(value => value + key);
-      setEntry(bullshit.substring(0, ocult.length + 1));
+      setOccult(value => value + key);
+      setEntry(bullshit.substring(0, occult.length + 1));
     }
   }
 
   function handleKeyDown(e) {
     if (psychographing) {
       if (e.key == 'Backspace') {
-        setEntry(bullshit.substring(0, ocult.length - 1));
-        setOcult(value => value.substring(0, value.length - 1));
+        setEntry(bullshit.substring(0, occult.length - 1));
+        setOccult(value => value.substring(0, value.length - 1));
       }
     }
   }
