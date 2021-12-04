@@ -25,6 +25,12 @@ body {
   background-repeat: no-repeat;
 }
 
+a:active,
+a:focus,
+a:hover {
+  color: $light !important;
+}
+
 #answer {
   transition: opacity 3s;
   word-wrap: break-word;

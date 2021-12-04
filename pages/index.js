@@ -3,31 +3,33 @@ import { FaDiceD20 } from 'react-icons/fa';
 import { Howl } from 'howler';
 import Container from '/components/layout/Container';
 import { getRandomInteger, getRandomString } from '/helpers/random';
+import { useTranslation } from 'hooks/useTranslation';
 
 export default function Home() {
+  const { t } = useTranslation();
   const features = [
-    'Esse é um tabuleiro de ouija digital, ele gera caracteres aleatórios que, às vezes, fazem sentido.',
-    'Acredita-se que entidades tenham capacidade de interferir no plano físico, conseguindo influenciar os caracteres.',
-    'Use por sua conta e risco!',
-    'Gostaria de saber sobre seu futuro?',
-    'Que tal conhecer um pouco sobre o outro lado?',
-    'As respostas nem sempre são tão claras quanto gostaríamos.',
-    'Leia todo o texto, por mais que pareça aleatório, as respostas podem estar escondidas.',
-    'O universo inteiro esperando para ser desvendado.'
+    t('This is a digital ouija board, it generates random characters that sometimes make sense.'),
+    t('It is believed that entities have the ability to interfere in the physical plane, managing to influence characters.'),
+    t('Use at your own risk!'),
+    t('Would you like to know about your future?'),
+    t('How about knowing a little about the other side?'),
+    t('The answers are not always as clear as we would like.'),
+    t('Read the entire text, however random it may seem, the answers may be hidden.'),
+    t('The entire universe waiting to be unraveled.'),
   ];
   const bullshits = [
-    'Se existe alguém nesse recinto nos ouvindo, responda meus questionamentos, por favor ',
-    'Espíritos que aqui habitam, podem responder nossas sinceras dúvidas ',
-    'Por favor, para que possamos dar andamento, me responda essa simples pergunta ',
-    'Se há alguém aqui nesse momento que pode se comunicar conosco, por favor, se manifeste ',
-    'Seres que rondam a outra dimensão, se podem entender o que eu escrevo, diga-me o que eu quero saber ',
-    'Espíritos do além, escutem o que eu digo e façam o que eu mando. Respondam agora minha indagação ',
-    'Convoco quem quer que esteja nesse recinto para um contato imediato através dessa tela onde escrevo ',
-    'Fantasmas incomunicaveis, se me responderem eu prometo que ascendo uma vela para vocês ',
-    'Que as almas perdidas utilizem esse caminho aberto para a comunicação entre nós presentes aqui ',
-    'Os que aqui se encontram tente controlar as letras geradas aleatoriamente para falar conosco ',
-    'Estamos aqui presentes a espera de um contato imediato com qualquer tipo de indivíduo ',
-    'Bode sagrado me faça um agrado respondendo a pergunta que te faço ',
+    t('If there is anyone in this room listening to us, answer my questions '),
+    t('Spirits who live here, can answer our sincere doubts '),
+    t('Please, so that we can get going, answer me this simple question '),
+    t('If there is anyone here right now who can communicate with us, please speak up'),
+    t('Beings who roam in another dimension, if you can understand what I write, tell me what I want to know '),
+    t('Spirits from beyond, listen to what I say and do what I say. Now answer my inquiry '),
+    t('I summon whoever is in this room for immediate contact through this screen where I write '),
+    t('Incommunicable ghosts, answer me I promise I will light a candle for you '),
+    t('May the lost souls use this open path for communication between us present here '),
+    t('Those here try to control the randomly generated letters to talk to us '),
+    t('We are here waiting for an immediate contact with any type of individual '),
+    t('Sacred goat please me by answering the question I ask you '),
   ];
   const sounds = {
     'radar': new Howl({ src: ['/assets/audios/radar.mp3'], preload: true })
@@ -66,7 +68,7 @@ export default function Home() {
     entryInput.current.focus();
   }
   
-  function datilography(key) {
+  function dactylography(key) {
     if (key == '/' && entry == '') {
       setPsychographing(true);
     }
@@ -92,7 +94,7 @@ export default function Home() {
     if (psychographing) {
       psycografy(e.key);
     } else {
-      datilography(e.key);
+      dactylography(e.key);
     }
   }
 
@@ -122,7 +124,7 @@ export default function Home() {
       <div className='container-fluid mt-auto'>
         <div className='row justify-content-center text-center'>
           <div className='col-sm-8'>
-            <h1 className='visually-hidden'>OUIJA</h1>
+            <h1 className='visually-hidden'>{t('OUIJA')}</h1>
             <p id='question' className='h1 text-primary'>{question}</p>
             <p id='answer' className={`h2 ${loading ? 'opacity-0' : 'opacity-100'}`}>{answer}</p>
           </div>
@@ -137,7 +139,7 @@ export default function Home() {
                 <input 
                   type='text' 
                   className='form-control bg-dark text-light border-light' 
-                  placeholder='Qual a sua pergunta?' 
+                  placeholder={t('What is your question?')} 
                   disabled={loading}
                   value={entry} 
                   ref={entryInput}

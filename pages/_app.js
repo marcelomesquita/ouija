@@ -6,9 +6,11 @@ import { analytics } from '/adapters/firebaseClient';
 import '/assets/styles/globals.scss'
 import Cursor from 'components/layout/Cursor';
 import RandomnessProvider from 'contexts/Randomness';
+import { useTranslation } from 'hooks/useTranslation';
 
 export default function MyApp({ Component, pageProps }) {
   const routers = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => {
     typeof document !== undefined ? require('bootstrap/dist/js/bootstrap') : null;
@@ -36,23 +38,23 @@ export default function MyApp({ Component, pageProps }) {
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
         <meta name='author' content='Marcelo Mesquita' />
 
-        <meta name='application-name' content='Ouija' />
-        <meta name='description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta name='application-name' content={t('Ouija')} />
+        <meta name='description' content={t('A modern version of the infamous ouija board for chatting with spirits or whatever is out there')} />
         <meta name='keywords' content='ouija, táboa de ouija, tabuleiro de ouija, jogo dos espíritos, lúcifer' />
 
-        <meta itemProp='name' content='Ouija' />
-        <meta itemProp='description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta itemProp='name' content={t('Ouija')} />
+        <meta itemProp='description' content={t('A modern version of the infamous ouija board for chatting with spirits or whatever is out there')} />
 
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@ouijacombr' />
-        <meta name='twitter:title' content='Ouija' />
-        <meta name='twitter:description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta name='twitter:title' content={t('Ouija')} />
+        <meta name='twitter:description' content={t('A modern version of the infamous ouija board for chatting with spirits or whatever is out there')} />
         <meta name='twitter:creator' content='@ouijacombr' />
 
-        <meta property='og:title' content='Ouija' />
+        <meta property='og:title' content={t('Ouija')} />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://www.ouija.com.br' />
-        <meta property='og:description' content='Versão moderna da infame tábua de ouija para conversar com espíritos ou o que quer seja que exista aí.' />
+        <meta property='og:description' content={t('A modern version of the infamous ouija board for chatting with spirits or whatever is out there')} />
 
         <title>Ouija</title>
         <link rel='shortcut icon' href='favicon.png' />
